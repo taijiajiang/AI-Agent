@@ -1,0 +1,257 @@
+{
+  "schema_name": "statistical_method_finder_taxonomy",
+  "schema_version": "0.1.0",
+  "purpose": "A preliminary multi-dimensional vocabulary for classifying research problems and retrieving potentially relevant statistical methods. It is a search aid, not an automatic model-selection decision tree.",
+  "usage_notes": [
+    "Multiple labels may be assigned within a category when appropriate.",
+    "Categories may remain empty when information is unavailable or not applicable.",
+    "Record uncertainty explicitly; do not force a label when evidence is insufficient.",
+    "Do not infer causal relationships or distributional assumptions from variable names or plots alone.",
+    "Distinguish observed data characteristics from assumptions and user-provided research goals."
+  ],
+  "categories": {
+    "research_objective": {
+      "display_name": "Research Objective",
+      "description": "The primary goal of the research.",
+      "multiple": true,
+      "labels": {
+        "prediction": {
+          "description": "Predict future or unknown outcomes.",
+          "zh_description": "預測未來或未知結果。"
+        },
+        "explanation": {
+          "description": "Explain or interpret relationships between variables.",
+          "zh_description": "解釋或詮釋變數與結果之間的關係。"
+        },
+        "causal_inference": {
+          "description": "Estimate or evaluate causal effects.",
+          "zh_description": "估計或評估因果效果。"
+        },
+        "description": {
+          "description": "Describe data characteristics, patterns, or distributions.",
+          "zh_description": "描述資料特性、模式或分布。"
+        },
+        "classification": {
+          "description": "Assign observations to predefined categories.",
+          "zh_description": "將觀測值分類至預先定義的類別。"
+        },
+        "clustering": {
+          "description": "Discover latent or previously unknown groups.",
+          "zh_description": "探索資料中潛在或未知的群體。"
+        },
+        "association": {
+          "description": "Examine statistical associations among variables.",
+          "zh_description": "分析變數之間的統計關聯。"
+        }
+      }
+    },
+    "response_variable_characteristics": {
+      "display_name": "Response Variable Characteristics",
+      "description": "The measurement scale or outcome type of the response variable(s).",
+      "multiple": true,
+      "labels": {
+        "continuous": {
+          "description": "A quantitative variable measured on a continuous scale.",
+          "zh_description": "連續尺度的定量變數。"
+        },
+        "binary": {
+          "description": "A response with two possible categories.",
+          "zh_description": "只有兩種可能結果的變數。"
+        },
+        "nominal": {
+          "description": "A categorical response with no intrinsic ordering.",
+          "zh_description": "沒有內在順序的類別變數。"
+        },
+        "ordinal": {
+          "description": "A categorical response with an intrinsic order.",
+          "zh_description": "具有內在順序的類別變數。"
+        },
+        "count": {
+          "description": "A non-negative integer-valued response representing event counts.",
+          "zh_description": "表示事件次數的非負整數變數。"
+        },
+        "proportion": {
+          "description": "A response representing a proportion or rate; record its denominator or exposure where relevant.",
+          "zh_description": "比例或比率型反應；必要時記錄分母或暴露量。"
+        },
+        "time_to_event": {
+          "description": "The time until an event occurs, potentially subject to censoring.",
+          "zh_description": "事件發生所需時間，可能存在設限。"
+        },
+        "multivariate": {
+          "description": "Multiple response variables are modeled jointly.",
+          "zh_description": "需要聯合建模的多個反應變數。"
+        }
+      }
+    },
+    "data_structure": {
+      "display_name": "Data Structure",
+      "description": "How observations are organized, sampled, or indexed.",
+      "multiple": true,
+      "labels": {
+        "cross_sectional": {
+          "description": "Observations are collected across units at a particular time or period.",
+          "zh_description": "在某一時間點或期間對不同研究單位收集的資料。"
+        },
+        "time_series": {
+          "description": "Observations are indexed sequentially over time.",
+          "zh_description": "依時間順序排列的觀測資料。"
+        },
+        "panel": {
+          "description": "Repeated observations are available for multiple units over time.",
+          "zh_description": "多個研究單位在不同時間點的重複觀測資料。"
+        },
+        "longitudinal": {
+          "description": "The same subjects or units are followed over time.",
+          "zh_description": "對相同研究對象或單位進行長期追蹤的資料。"
+        },
+        "hierarchical": {
+          "description": "Observations are nested within groups or multiple levels.",
+          "zh_description": "觀測值具有群組或多層次巢狀結構。"
+        },
+        "spatial": {
+          "description": "Observations have spatial locations or spatial relationships.",
+          "zh_description": "觀測值具有地理位置或空間關係。"
+        },
+        "functional": {
+          "description": "Observational units include curves, trajectories, or functions.",
+          "zh_description": "觀測單位包含曲線、軌跡或函數型資料。"
+        },
+        "survival": {
+          "description": "Data record event times and may include censoring or truncation.",
+          "zh_description": "記錄事件時間，可能包含設限或截斷。"
+        }
+      }
+    },
+    "dependence_structure": {
+      "display_name": "Dependence Structure",
+      "description": "Potential dependence or correlation among observations.",
+      "multiple": true,
+      "labels": {
+        "independent_observations": {
+          "description": "Observations are plausibly independent under the study design.",
+          "zh_description": "依研究設計，觀測值可合理視為相互獨立。"
+        },
+        "serial_dependence": {
+          "description": "Observations are dependent across ordered time points.",
+          "zh_description": "依時間順序排列的觀測值之間存在相依性。"
+        },
+        "within_subject_correlation": {
+          "description": "Repeated observations from the same subject are correlated.",
+          "zh_description": "同一研究對象的重複觀測值之間存在相關性。"
+        },
+        "cluster_dependence": {
+          "description": "Observations within the same cluster or group may be correlated.",
+          "zh_description": "同一群集或群組內的觀測值可能存在相關性。"
+        },
+        "spatial_dependence": {
+          "description": "Dependence is related to spatial proximity or spatial structure.",
+          "zh_description": "觀測值的相依性與空間鄰近程度或空間結構有關。"
+        },
+        "network_dependence": {
+          "description": "Dependence is induced by links or relationships in a network.",
+          "zh_description": "相依性由網絡中的連結或關係所形成。"
+        }
+      }
+    },
+    "distributional_characteristics": {
+      "display_name": "Distributional Characteristics",
+      "description": "Candidate distributional forms or features to assess; do not assign them from visual inspection alone.",
+      "multiple": true,
+      "labels": {
+        "gaussian": {
+          "description": "A Gaussian or normal distribution is a plausible modeling assumption.",
+          "zh_description": "可能適合以高斯或常態分布建模。"
+        },
+        "bernoulli": {
+          "description": "A binary response may follow a Bernoulli distribution.",
+          "zh_description": "二元反應可能服從 Bernoulli 分布。"
+        },
+        "binomial": {
+          "description": "A number of successes out of a known number of trials may follow a Binomial distribution.",
+          "zh_description": "已知試驗次數下的成功次數可能服從 Binomial 分布。"
+        },
+        "poisson": {
+          "description": "A count response may be modeled using a Poisson distribution.",
+          "zh_description": "計數型反應可能適合以 Poisson 分布建模。"
+        },
+        "negative_binomial": {
+          "description": "An overdispersed count response may be modeled using a Negative Binomial distribution.",
+          "zh_description": "具有過度離散的計數型反應可能適合以 Negative Binomial 分布建模。"
+        },
+        "gamma": {
+          "description": "A positive, right-skewed continuous response may be modeled using a Gamma distribution.",
+          "zh_description": "正值且右偏的連續反應可能適合以 Gamma 分布建模。"
+        },
+        "zero_inflated": {
+          "description": "The response may contain more zeros than expected under a standard count model.",
+          "zh_description": "零值數量可能高於一般計數模型的預期。"
+        },
+        "heavy_tailed": {
+          "description": "The response or errors may have heavier tails than a Gaussian distribution.",
+          "zh_description": "反應變數或誤差可能具有比常態分布更厚的尾部。"
+        },
+        "mixture_distribution": {
+          "description": "Data may arise from multiple underlying distributions or latent subpopulations.",
+          "zh_description": "資料可能來自多個潛在分布或子群體的混合。"
+        }
+      }
+    },
+    "research_constraints": {
+      "display_name": "Research Constraints",
+      "description": "Data, design, or computational limitations that may affect method suitability.",
+      "multiple": true,
+      "labels": {
+        "small_sample_size": {
+          "description": "The sample may be insufficient for some methods or asymptotic approximations.",
+          "zh_description": "樣本數可能不足以支持某些方法或漸近近似。"
+        },
+        "high_dimensional_data": {
+          "description": "The number of predictors or features is large relative to the sample size.",
+          "zh_description": "相較於樣本數，解釋變數或特徵數量很大。"
+        },
+        "missing_data": {
+          "description": "Some variables or observations contain missing values.",
+          "zh_description": "部分變數或觀測值存在缺失。"
+        },
+        "censoring": {
+          "description": "The outcome or event time is only partially observed.",
+          "zh_description": "結果或事件時間僅被部分觀測。"
+        },
+        "class_imbalance": {
+          "description": "Some outcome classes are substantially less frequent than others.",
+          "zh_description": "部分結果類別的出現頻率遠低於其他類別。"
+        },
+        "measurement_error": {
+          "description": "Observed variables may differ from their true values due to measurement processes.",
+          "zh_description": "觀測變數可能因測量過程而偏離真實值。"
+        },
+        "limited_observations": {
+          "description": "The number of usable observations is limited by design or data availability.",
+          "zh_description": "受到研究設計或資料可得性限制，可用觀測值數量有限。"
+        },
+        "computational_constraints": {
+          "description": "Resources, runtime, or scalability may restrict available methods.",
+          "zh_description": "運算資源、執行時間或可擴展性限制可使用的方法。"
+        }
+      }
+    }
+  },
+  "profile_template": {
+    "research_objective": [],
+    "response_variable_characteristics": [],
+    "data_structure": [],
+    "dependence_structure": [],
+    "distributional_characteristics": [],
+    "research_constraints": [],
+    "additional_context": {
+      "research_question": null,
+      "response_variables": [],
+      "explanatory_variables": [],
+      "sample_size": null,
+      "time_index": null,
+      "grouping_variables": [],
+      "uncertainties": []
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "methods": [
+    {
+      "name": "Correspondence Analysis",
+      "tags": [
+        "contingency_table",
+        "categorical_data",
+        "association",
+        "visualization"
+      ]
+    },
+    {
+      "name": "Multiple Correspondence Analysis",
+      "tags": [
+        "indicator_matrix",
+        "contingency_table",
+        "categorical_data",
+        "association",
+        "visualization",
+        "pca"
+
+      ]
+    }
+  ]
+}
